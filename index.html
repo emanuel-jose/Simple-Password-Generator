@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./view/style/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet"> 
+    <title>Pass-Generator</title>
+</head>
+<body>
+    <main id="container">
+
+        <header id="title">
+            <h1>Pass Generator</h1>
+        </header>
+
+        <form id="create-options" action="#">
+            <label for="upperLetters">Upper Letters: </label>
+            <input type="checkbox" name="check" id="upperLetters" class="check">
+
+            <label for="lowerLetters">Lower Letters: </label>
+            <input type="checkbox" name="check" id="lowerLetters" class="check">
+
+            <label for="symbols">Symbols: </label>
+            <input type="checkbox" name="check" id="symbols" class="check">
+
+            <label for="numbers">Numbers: </label>
+            <input type="checkbox" name="check" id="numbers" class="check">
+
+            <label for="length">Length of pass:</label>
+            <input type="number" name="length" id="length" min="0" max="20">
+
+            <input type="button" name="makeButton" id="makeButton" value="Make Pass">
+        </form>
+
+        <div id="passwordBox"></div>
+    </main>
+
+    <script src="./controllers/arrays.js"></script>
+    <script src="./controllers/makePass.js"></script>
+</body>
+</html>

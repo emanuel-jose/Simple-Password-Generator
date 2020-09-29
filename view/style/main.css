@@ -1,0 +1,101 @@
+:root {
+    --color-bg: #1a1a1a;
+    --color-title: #fff;
+    --color-font: #e5e5e5;
+    --color-button-bg: #1a1a1a;
+    --color-button-border: #e5e5e5;
+    --color-button-font: #e5e5e5;
+    --color-body-bg: #383737;
+    --font-default: 'Source Code Pro';
+    font-size: 16px;
+}
+
+html, body, main, head, h1, form, label, input {
+    font-family: var(--font-default);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+body {
+    background: var(--color-body-bg);
+}
+
+main#container {
+    background: var(--color-bg);
+    width: 80vw;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 1.4rem;
+    box-shadow: inset 1px 1px 10px var(--color-button-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#title  h1 {
+    color: var(--color-title);
+    font-weight: 600;
+    font-variant: small-caps;
+}
+
+#create-options {
+    color: var(--color-font);
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-variant: small-caps;
+}
+
+label {
+    width: 80%;
+    margin-bottom: 0.5rem;
+}
+
+#length {
+    width: 10%;
+    border-radius: 0.2rem;
+    border: 0.5px solid var(--color-font);
+    background: var(--color-bg);
+    color: var(--color-font);
+}
+
+#makeButton {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+    background: var(--color-bg);
+    color: var(--color-font);
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: 1px solid var(--color-button-border);
+    transition: background 0.3s;
+}
+
+#makeButton:hover {
+    cursor: pointer;
+    background: var(--color-font);
+    color: var(--color-button-bg);
+    border-color: var(--color-font);
+}
+
+#passwordBox {
+    background: var(--color-bg);
+    box-shadow: inset 0px 1px 10px var(--color-font);
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--color-font);
+}
+
+
+
+

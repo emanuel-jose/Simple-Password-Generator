@@ -6,39 +6,69 @@ const length = document.querySelector('#length')
 const makeButton = document.querySelector('#makeButton')
 const boxResult = document.querySelector('#passwordBox')
 
-let finalPass = ''
+const verificationCheckBox = () => {
+    let oneIsChecked = false
+    
+    if (upperCheck.checked === true
+        || lowerCheck.checked === true
+        || symbolCheck.checked === true
+        || numberCheck.checked === true){
+            oneIsChecked = true
+        }
 
+    return oneIsChecked
+}
 
-
-makeButton.addEventListener('click', () => {
-    let arrMakePass = []
-
+const insertValuesInArray = (arr) => {
     if (upperCheck.checked === true) {
         for (let i = 0; i < upper.length; i++) {
-            arrMakePass.push(upper[i])
+            arr.push(upper[i])
         }
     }
 
     if (lowerCheck.checked === true) {
         for (let i = 0; i < lower.length; i++) {
-            arrMakePass.push(lower[i])
+            arr.push(lower[i])
         }
     }
 
     if (symbolCheck.checked === true) {
         for (let i = 0; i < symbols.length; i++) {
-            arrMakePass.push(symbols[i])
+            arr.push(symbols[i])
         }
     }
 
     if (numberCheck.checked === true) {
         for (let i = 0; i < number.length; i++) {
-            arrMakePass.push(number[i])
+            arr.push(number[i])
         }
     }
+}
 
-    // console.log(arrMakePass)
-    
+const createPass = (arr) => {
+    let passLen = length.value
+    let arrLen = arr.length-1
+    let password = ''
+    for (let i = 0; i < passLen; i++) {
+        password += arr[Math.round(Math.random()*arrLen)]
+    }
+
+    return password
+}
+
+makeButton.addEventListener('click', () => {
+    let arrMakePass = []
+
+    if (verificationCheckBox()){
+        insertValuesInArray(arrMakePass)  
+        let result = createPass(arrMakePass)
+        boxResult.innerHTML = ''
+        const span = document.createElement('span')
+        span.innerText = result
+        boxResult.appendChild(span)
+    }
 
 })
+
+
 
